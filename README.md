@@ -4,15 +4,24 @@
 
 A bot for team work chats. Mention @winx_bot in a message — it parses the text via GigaChat and returns a structured task: assignee, priority, deadline, links.
 
+Write to the bot in a private chat — it decomposes your task and tells you whether it needs to be split or is already atomic.
+
 ## Features
 
-- Responds only to @mentions in group chats
+**In group chats (mention @winx_bot):**
 - Splits one message into multiple tasks if needed
 - Auto-assigns executor by federal district
 - Extracts links from messages (entities + regex)
 - Detects priority (high / medium / low) from keywords
 - Extracts deadlines from text
 - Posts results to the «Tasks» topic (topic_id=2)
+
+**In private chat (DM the bot):**
+- Accepts any task description
+- Determines if it's a "container" (multiple actions) or already atomic
+- If needs splitting: returns numbered subtasks in "verb + result" format
+- If already atomic: confirms it's good to go as-is
+- Responds in a friendly tone ("Друг, предлагаю разбить...")
 
 ## Stack
 
